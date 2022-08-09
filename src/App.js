@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Routes, useHistory } from "react-router-dom";
+//in react-router-dom v6, routes has replaced Switch
+// import { useNavigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Cookie from "./components/Cookie";
+import Home from "./pages/Home";
+import JobListings from "./pages/JobListings";
 
 function App() {
+  //this returned Attempted import error: 'useHistory' is not exported from 'react-router-dom' error
+  //  let history = useHistory();
+  // let navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        {/* <Route exact path='/' render={props => <Home {...props} />} /> */}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/job-listings" element={<JobListings />} />
+      </Routes>
+      <Cookie />
+      <Footer />
+    </BrowserRouter>
   );
 }
 
