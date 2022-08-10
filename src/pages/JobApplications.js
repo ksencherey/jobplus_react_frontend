@@ -2,10 +2,10 @@ import React from "react";
 import Hero from "../components/Hero";
 import ListingFilter from "../components/ListingFilter";
 
-export default function JobListings(props) {
+export default function JobApplications() {
   return (
     <>
-      <Hero labelColor="primary" heroType="plain" />
+      <Hero heroType="plain" />
       <ListingFilter />
     </>
   );
