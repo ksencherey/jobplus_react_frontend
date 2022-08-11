@@ -1,14 +1,14 @@
 import React from "react";
-import Hero from "../components/Hero";
 import ListingFilter from "../components/ListingFilter";
+import Hero from "../components/Hero";
 import Listing from "../components/Listing";
 
-export default function Search() {
-  const listings = [<Listing />];
+export default function ListingDetails() {
+  const listings = [<Listing detailed={true} />];
 
   return (
     <>
-      <Hero heroType="plain" />
+      <Hero labelColor="primary" heroType="plain" />
       <ListingFilter components={listings} />
     </>
   );
